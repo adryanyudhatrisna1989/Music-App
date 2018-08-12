@@ -1,5 +1,5 @@
-# Music App
-Simple music app that can play 7 different notes
+# Xylophone
+Simple app that can play 7 different notes
 
 ```swift
 @IBAction func notePressed(_ sender: UIButton) {
