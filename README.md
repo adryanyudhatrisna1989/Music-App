@@ -1,11 +1,27 @@
-# Xylophone
-Learn to make iOS Apps with [The App Brewery](https://www.appbrewery.co) 📱 | Project Stub | (Swift 4.0/Xcode 9)
+# Music App
+Simple music app that can play 7 different notes
 
-Beginner: Download the starter project files as .zip and extract the files to your desktop.
-
-Pro: Git clone to your Xcode projects folder.
+```swift
+@IBAction func notePressed(_ sender: UIButton) {
+        selectedSoundFileName = soundArray[sender.tag - 1]
+        print(selectedSoundFileName)
+        
+        playSound()
+    }
+    
+    func playSound() {
+        let soundURL = Bundle.main.url(forResource: selectedSoundFileName, withExtension: "wav")
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: soundURL!)
+        }
+        catch {
+            print(error)
+        }
+        
+        audioPlayer.play()
+```
 
 ## Finished App
 <img src="https://github.com/londonappbrewery/Images/blob/master/Xylophone.png" width="400">
 
-Copyright © London App Brewery
